@@ -1,0 +1,11 @@
+---
+- hosts: all
+
+  become: True
+
+  tasks:
+
+  - user: name=ansible comment="Ansible User" group=wheel
+
+  - name: Placing key
+    authorized_key: user=ansible key="{{ lookup('file', './files/authorized_keys.ansible.pub') }}"
