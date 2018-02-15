@@ -36,7 +36,7 @@ def main():
                 init=True,
                 tty=True,
             )
-        print('RUNNING {}...'.format(cid))
+            print('RUNNING {}...'.format(cid))
     print('DONE! ALL CONTAINERS NOW RUNNING')
 
 
