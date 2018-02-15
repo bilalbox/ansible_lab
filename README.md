@@ -18,18 +18,26 @@ Lightweight docker-based lab for testing out ansible concepts.
 # Generate your SSH key and copy to build and playbook folders
 
 `ssh-keygen`
+
 `cd ansible_lab/docker`
+
 `cp ~/.ssh/id_rsa.pub ./`
+
 `cp ~/.ssh/id_rsa.pub files/authorized_keys.ansible`
+
 
 
 # Run build script to build docker image and deploy lab
 
 `chmod a+x build_docker_lab.py`
+
 `./build_docker_lab.py`
+
 
 
 # Cleanup when you're done
 
 `chmod a+x cleanup.py`
+
 `./cleanup.py`
+
