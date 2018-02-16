@@ -1,5 +1,5 @@
 # ansible_lab
-Lightweight docker-based lab for testing out ansible concepts.
+Lightweight docker-based lab for testing ansible concepts.
 
 
 # Pre-requisites
@@ -16,13 +16,14 @@ git clone https://github.com/bilalbox/ansible_lab.git
 # Generate your SSH key and copy to build and playbook folders
 ```bash
 ssh-keygen
-cd ansible_lab/docker
-cp ~/.ssh/id_rsa.pub ./
-cp ~/.ssh/id_rsa.pub files/authorized_keys.ansible
+cd ansible_lab/
+cp ~/.ssh/id_rsa.pub docker/
+cp ~/.ssh/id_rsa.pub playbooks/files/authorized_keys.ansible
 ```
 
 # Run build script to build docker image and deploy lab
 ```bash
+cd docker
 chmod a+x build_docker_lab.py
 ./build_docker_lab.py
 ```

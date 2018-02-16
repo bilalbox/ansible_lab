@@ -6,11 +6,11 @@ import argparse
 import sys
 
 
-IMAGE_NAME = 'test_dbuild:01'
+IMAGE_NAME = 'ansible:01'
 GROUPS = {
-    'loadbalancers': 1,
-    'webservers': 3,
-    'dbservers': 2,
+    'lb': 1,
+    'web': 3,
+    'db': 2,
     }
 BUILD_PARAMS = { 
     'path': './', 
@@ -29,7 +29,7 @@ def main():
     for g,n in GROUPS.items():
         for i in range(n):
             cid = client.containers.run(
-                name='{}0{}'.format(g,i+1),
+                name='{}{:03d}'.format(g,i+1),
                 labels={'group': g},
                 image=IMAGE_NAME,
                 detach=True,
